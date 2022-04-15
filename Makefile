@@ -1,5 +1,5 @@
 #Executable Name
-EXENAME = finalproject
+EXENAME = exec
 TEST = test
 
 # Add all object files needed for compiling:
