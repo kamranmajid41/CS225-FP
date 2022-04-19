@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <string> 
 #include <unordered_map>
 #include <iomanip>
 
@@ -14,8 +15,10 @@ int main() {
     cout << ""<< endl;
     cout << "CS225 Final Project" << endl;
     cout << "Made by: kmajid2, adnann2, ebaadss2, ymohid2" << endl;
+
+    string input = "y"; 
     
-    while(true) {
+    while(input == "y") {
         string airportFile;
         string routesFile;
         string StartingAirport;
@@ -43,6 +46,7 @@ int main() {
 
         switch (mode)
         {
+            // "(0) Using BFS, traverse all of the graph from a given airport "
             case 0:{
                 validSource = false;
                 while(validSource == false){
@@ -69,7 +73,7 @@ int main() {
                 break;
             }
 
-
+            // "(1) Using BFS, traverse a given number of moves of the graph from a given airport"
             case 1:{
                 validSource = false;
                 while(validSource == false){
@@ -101,7 +105,7 @@ int main() {
                 break;
             }
 
-
+            // "(2) Using BFS, traverse the graph until a destination airport from a given airport"
             case 2:{
                 bool validAP = false;
                 while(validAP == false){
@@ -135,11 +139,18 @@ int main() {
                 } 
                 break;
             }
+            
+            
         }
 
         cout << "" << endl;
-        cout << "Computation finished. Now restarting the program. "<< endl;
-        cout << "" << endl;
+        cout << "Computation finished. Would you like to run the program again? (y/n) " << endl;
+
+        cin >> input; 
+        while(input != "y" && input != "n"){
+            cout << "Your input is invalid, make sure that it is lower case and either y or n." << endl; 
+            cin >> input; 
+        }
     }
     return 0;
 }
